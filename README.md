@@ -7,6 +7,10 @@ Team-083 SMEFund Project
 
 SMEFund is a software system that enables SMEs to access funds from Funders. The goal of this app is to create an easy way these SMEs can have access to fund, manage and report their activities to these Funders who funded them. 
 
+This is the backend of the project which is API based. 
+
+Api documentation is available here https://documenter.getpostman.com/view/11412929/SzmjyaDv
+
 - Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest
 
 - Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities

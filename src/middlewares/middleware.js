@@ -21,7 +21,7 @@ const middleware = allowedUser => (req, res, next) =>  {
         if (error) {
             
             return res.status(403).json({
-                                          success: "error",
+                                          status: "error",
 
                                           message: 'Token is not valid'
                                       });
@@ -39,7 +39,7 @@ const middleware = allowedUser => (req, res, next) =>  {
             else{
             
                 return res.status(403).json({
-                                              success: "error",
+                                              status: "error",
     
                                               message: 'You don\'t have Required permission to acess this route'
                                           });
@@ -52,7 +52,7 @@ const middleware = allowedUser => (req, res, next) =>  {
   else {
     
     return res.status(403).json({
-                                  success: "error",
+                                  status: "error",
               
                                   message: "Auth token is not supplied"
                               });
