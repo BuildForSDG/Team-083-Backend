@@ -48,7 +48,7 @@ This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bun
 
 ## Authors
 1. Oluwamayowa Fadairo	Backend	@OluwmayowaF
-2. Hammed Olalekan Osanyinpeju Fullstack @Successtar
+2. Hammed Olalekan Osanyinpeju Fullstack @successtar
 3. Ezeh Livinus Backend @ezehlivinus
 4. Chukwujama Osinachi Frontend @vicradon
 5. Adeyeye Muiz Olayinka	Frontend	@princeadeyeye
