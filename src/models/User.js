@@ -8,13 +8,13 @@ const userSchema = mongoose.Schema({
                                             
                                             type: String, 
                                             
-                                            required: true,
-                                            
-                                            unique: true
+                                            required: true
                                         },
                                         name: { 
                                             
                                             type: String, 
+
+                                            min: 4,
                                             
                                             required: true 
                                         },
@@ -22,7 +22,7 @@ const userSchema = mongoose.Schema({
                                             
                                             type: String,
                                             
-                                            enum : ['PENDING','ACTIVE','SUSPENDED','DELETED'],
+                                            enum : ['PENDING','ACTIVE','SUSPENDED'],
                                             
                                             default: 'ACTIVE'
                                         },
@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
                                             
                                             type: String,
                                             
-                                            required:true
+                                            required:[true, 'Enter a valid password with minimum of eight characters']
                                         },
                                         userType: {
                                             
@@ -38,7 +38,7 @@ const userSchema = mongoose.Schema({
                                             
                                             enum : ['ADMIN','SME','FUNDER'],
                                             
-                                            required: true,
+                                            required: [true, 'Invalid User type'],
                                             
                                             uppercase:true
                                         },
