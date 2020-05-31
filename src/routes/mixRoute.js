@@ -2,6 +2,10 @@ const router = require('express').Router();
 
 const user = require('../controllers/userController');
 
+const smeCategory = require('../controllers/smeCategoryController');
+
+const smeProfile = require('../controllers/smeProfileController');
+
 const middleware = require('../middlewares/middleware');
 
 
@@ -36,5 +40,16 @@ router.patch('/user/update', middleware(['ADMIN', 'SME', 'FUNDER']), user.accoun
 
 router.put('/user/avatar', middleware(['ADMIN', 'SME', 'FUNDER']), user.changeAvatar);
 
+/* SME Category View */
+
+router.get('/categories', middleware(['ADMIN', 'SME', 'FUNDER']), smeCategory.getCategories);
+
+router.get('/category/:name', middleware(['ADMIN', 'SME', 'FUNDER']), smeCategory.getCategory);
+
+/* SME Profile View  */
+
+router.get('/smeProfiles', middleware(['ADMIN', 'SME', 'FUNDER']), smeProfile.viewAllProfiles);
+
+router.get('/smeProfile/:id', middleware(['ADMIN', 'SME', 'FUNDER']), smeProfile.viewASmeProfile);
 
 module.exports = router;
