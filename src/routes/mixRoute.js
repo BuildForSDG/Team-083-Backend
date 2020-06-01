@@ -6,6 +6,8 @@ const smeCategory = require('../controllers/smeCategoryController');
 
 const smeProfile = require('../controllers/smeProfileController');
 
+const smeFundRequest = require('../controllers/smeFundRequestController');
+
 const middleware = require('../middlewares/middleware');
 
 
@@ -40,16 +42,21 @@ router.patch('/user/update', middleware(['ADMIN', 'SME', 'FUNDER']), user.accoun
 
 router.put('/user/avatar', middleware(['ADMIN', 'SME', 'FUNDER']), user.changeAvatar);
 
-/* SME Category View */
+/* View SME Category  */
 
 router.get('/categories', middleware(['ADMIN', 'SME', 'FUNDER']), smeCategory.getCategories);
 
 router.get('/category/:name', middleware(['ADMIN', 'SME', 'FUNDER']), smeCategory.getCategory);
 
-/* SME Profile View  */
+/* View SME Profile   */
 
 router.get('/smeProfiles', middleware(['ADMIN', 'SME', 'FUNDER']), smeProfile.viewAllProfiles);
 
 router.get('/smeProfile/:id', middleware(['ADMIN', 'SME', 'FUNDER']), smeProfile.viewASmeProfile);
+
+/*  View SME Fund Request */
+router.get('/fundRequests/:smeId', middleware(['ADMIN', 'SME', 'FUNDER']), smeFundRequest.viewSmeFundRequests);
+
+router.get('/fundRequest/:requestId', middleware(['ADMIN', 'SME', 'FUNDER']), smeFundRequest.viewAFundRequest);
 
 module.exports = router;
