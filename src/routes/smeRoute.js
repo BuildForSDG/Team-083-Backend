@@ -2,9 +2,9 @@ const router = require('express').Router();
 
 // const user = require('../controllers/userController');
 
-const smeProfileController = require('../controllers/smeProfileController');
+const smeProfile = require('../controllers/smeProfileController');
 
-const smeFundRequestController = require('../controllers/smeFundRequestController');
+const smeFundRequest= require('../controllers/smeFundRequestController');
 
 const middleware = require('../middlewares/middleware');
 
@@ -20,11 +20,11 @@ const middleware = require('../middlewares/middleware');
 
 // router.get(path, middleware(['SME']), handler);
 // Create a SME Profile
-router.post('/smeProfile', middleware(['ADMIN', 'SME']), smeProfileController.createSmeProfile);
+router.post('/smeProfile', middleware(['ADMIN', 'SME']), smeProfile.createSmeProfile);
 
-router.get('/smeProfile', middleware(['ADMIN', 'SME']), smeProfileController.loggedInUserSmeProfile);
+router.get('/smeProfile', middleware(['ADMIN', 'SME']), smeProfile.loggedInUserSmeProfile);
 
 // SME Request for Funds
-router.post('/fundRequest', middleware(['SME']), smeFundRequestController.createFundRequest);
+router.post('/fundRequest', middleware(['SME']), smeFundRequest.createFundRequest);
 
 module.exports = router;
